@@ -36,12 +36,6 @@
     height: 100vh;
     padding: 4rem;
    }
-   .cards-founded{
-    background-color: #212529;
-    color: white;
-    padding: 1.5rem;
-    width: 90%;
-   }
 
 
   </style>

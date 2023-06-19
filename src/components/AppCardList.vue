@@ -11,6 +11,7 @@
 <script>
 import AppCard from './AppCard.vue';
 import axios from 'axios';
+import {store} from "../"
 export default {
 data(){
     return{
