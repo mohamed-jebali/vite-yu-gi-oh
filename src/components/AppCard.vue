@@ -1,8 +1,8 @@
 <template>
     <div>
-      <h1>
-        AppCard
-      </h1>
+      <div class="image-container">
+        <!-- <img :src="image" alt="title"> -->
+      </div>
     </div>
   </template>
   
@@ -10,8 +10,12 @@
   
   <script>
   export default {
-    name: "AppCard"
-    
+    name: "AppCard",
+    props:{
+        title : String,
+        type : String,
+        image : String,
+    }
   }
   </script>
    

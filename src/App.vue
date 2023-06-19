@@ -2,7 +2,7 @@
 import AppHeader from './components/AppHeader.vue'
 import AppSelect from './components/AppSelect.vue'
 import AppMain from './components/AppMain.vue'
-import AppCard from './components/AppCard.vue'
+import AppCardList from './components/AppCardList.vue'
 import './styles/general.scss'
 
 export default{
@@ -11,7 +11,7 @@ export default{
     AppHeader,
     AppSelect,
     AppMain,
-    AppCard
+    AppCardList
   }
 
 }
@@ -21,7 +21,7 @@ export default{
   <AppHeader/>
   <AppSelect/>
   <AppMain/>
-  <AppCard/>
+  <AppCardList/>
 </template>
 
 <style lang="scss">
