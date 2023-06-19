@@ -1,6 +1,8 @@
 <template>
-        <div class="container">
-            
+        <div class="container mt-4">
+            <div class="cards-container">
+
+            </div>
         </div>
   </template>
   
@@ -15,6 +17,11 @@
    
   
   <style lang="scss">
-  
+
+   .cards-container{
+    background-color: white;
+    height: 100vh;
+   }
+
 
   </style>

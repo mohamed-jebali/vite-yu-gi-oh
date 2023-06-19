@@ -12,7 +12,6 @@
   
   
   <script>
-  import { createApp } from 'vue'
   export default {
     name: "AppSelect"
     
