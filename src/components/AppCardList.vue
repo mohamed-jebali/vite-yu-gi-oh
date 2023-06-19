@@ -1,9 +1,4 @@
 <template>
-    <div class="cards-founded">
-        <h3>
-            Founded 39 Cards
-        </h3>
-    </div>
 </template>
 
 
@@ -11,7 +6,7 @@
 <script>
 import AppCard from './AppCard.vue';
 import axios from 'axios';
-import {store} from "../"
+import {store} from "../store.js"
 export default {
 data(){
     return{
@@ -26,7 +21,7 @@ components:{
 created(){
     axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
     .then( (response) => {
-        console.log(response.data.results);
+        console.log(response.data);
     })
     .catch(function (error) {
         console.log(error);
