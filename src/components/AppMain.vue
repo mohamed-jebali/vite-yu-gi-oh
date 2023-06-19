@@ -1,16 +1,12 @@
 <template>
-    <div>
-      <h1>
-        Main
-      </h1>
-    </div>
+        <div class="container">
+            
+        </div>
   </template>
   
   
   
   <script>
-  import { createApp } from 'vue'
-  import AppMain from './AppMain.vue';
   export default {
     name: "AppMain"
     
@@ -20,4 +16,5 @@
   
   <style lang="scss">
   
+
   </style>
