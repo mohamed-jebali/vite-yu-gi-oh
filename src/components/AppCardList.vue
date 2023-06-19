@@ -1,32 +1,29 @@
 <template>
+        <div class="container container-cards">
+            <AppCard v-for="item in store.listCard"
+            :title="item.name"
+            :type="item.type"
+            :image="item.card_images[0].image_url"
+            />
+        </div>
 </template>
 
 
 
 <script>
 import AppCard from './AppCard.vue';
-import axios from 'axios';
 import {store} from "../store.js"
 export default {
 data(){
     return{
         store,
-        listCard:[],
     }
 },
 name: "AppCardList",
 components:{
-    AppCard  
+    AppCard,
+    store  
 },
-created(){
-    axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
-    .then( (response) => {
-        console.log(response.data);
-    })
-    .catch(function (error) {
-        console.log(error);
-    })
-}
 
 }
 
@@ -35,11 +32,11 @@ created(){
 
 <style lang="scss">
 
-.cards-founded{
-background-color: #212529;
-color: white;
-padding: 1.5rem;
-width: 90%;
+
+.container-cards{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
 }
 
 

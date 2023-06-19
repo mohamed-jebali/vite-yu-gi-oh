@@ -1,14 +1,14 @@
 <template>
-        <div class="container mt-4">
-            <div class="cards-container">
-                <div class="cards-founded mx-auto">
-                    <h3>
-                        Found 39 Cards
-                    </h3>
-                    <AppCardList/>
-                </div>
+        <main class="container mt-4">
+            <div class="cards-founded container">
+                <h3>
+                    Cards Founded 39
+                </h3>
             </div>
-        </div>
+            <div class="cards-container">
+                <AppCardList/>
+            </div>
+        </main>
   </template>
   
   
@@ -31,11 +31,21 @@
   
   <style lang="scss">
 
-   .cards-container{
-    background-color: white;
-    height: 100vh;
-    padding: 4rem;
-   }
+.cards-container{
+background-color: white;
+padding: 4rem;
+}
+
+.cards-founded{
+    background-color: black;
+    color: white;
+    padding: 1.5rem;
+
+    h3{
+        margin-left: 4rem;
+    }
+}
 
 
-  </style>
+
+</style>
