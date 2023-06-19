@@ -1,6 +1,8 @@
 <template>
-    <div v-for="card in listCard">
-        :
+    <div class="cards-founded">
+        <h3>
+            Founded 39 Cards
+        </h3>
     </div>
 </template>
 
@@ -8,7 +10,7 @@
 
 <script>
 import AppCard from './AppCard.vue';
-// import axios from 'axios';
+import axios from 'axios';
 export default {
 data(){
     return{
@@ -37,11 +39,6 @@ created(){
 
 <style lang="scss">
 
-.cards-container{
-background-color: white;
-height: 100vh;
-padding: 4rem;
-}
 .cards-founded{
 background-color: #212529;
 color: white;
