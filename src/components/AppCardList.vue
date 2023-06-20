@@ -14,6 +14,7 @@
 <script>
 import AppCard from './AppCard.vue';
 import {store} from "../store.js"
+import axios from 'axios';
 export default {
 data(){
     return{
@@ -25,7 +26,16 @@ components:{
     AppCard,
     store  
 },
-
+created(){
+    axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+    .then( (response) => {
+        console.log(response.data.archetype);
+        // this.store.listCard = response.data.data
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+}
 }
 
 </script>

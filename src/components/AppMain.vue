@@ -23,7 +23,6 @@
         return{
             store,
             listCard:[],
-            apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',
         }
     },
     name: "AppMain",
@@ -31,26 +30,16 @@
         AppCardList,
         AppSelect  
     },
-    methods: {
-        searchCard(needle = ''){
-            axios.get(this.apiUrl, {
-                    params: {
-                        name: needle
-                    }
-                })
-                .then( (response) => {
-
-                    this.listCard = response.data
-
-                })
-                .catch(function (error) {
-                    console.log(error);
-                })
-        }
-    },
     created(){
-        this.searchCard();
-}   
+    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+    .then( (response) => {
+        console.log(response.data.data);
+        this.store.listCard = response.data.data
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+}
   }
 
   </script>
