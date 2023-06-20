@@ -19,6 +19,7 @@ export default {
 data(){
     return{
         store,
+        filteredList:[]
     }
 },
 name: "AppCardList",
@@ -29,8 +30,9 @@ components:{
 created(){
     axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
     .then( (response) => {
-        console.log(response.data.archetype);
-        // this.store.listCard = response.data.data
+        console.log(response.data)
+        this.filteredList = response.data.slice(0, 20);
+        console.log(this.filteredList)
     })
     .catch(function (error) {
         console.log(error);

@@ -13,6 +13,11 @@
   
   <script>
   export default {
+    data() {
+      return {
+        textSearch:"",
+      }
+    },
     name: "AppSelect"
     
   }
