@@ -12,13 +12,29 @@
   
   
   <script>
+    import axios from 'axios';
   export default {
     data() {
       return {
         textSearch:"",
+        filteredList:[]
       }
     },
-    name: "AppSelect"
+    name: "AppSelect",
+    created() {
+        axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+            .then((response) => {
+                this.filteredList = response.data;
+                this.filteredList = this.filteredList.slice(0, 21);
+                console.log(this.filteredList);
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+            .finally(function () {
+            });
+
+    }
     
   }
   </script>
