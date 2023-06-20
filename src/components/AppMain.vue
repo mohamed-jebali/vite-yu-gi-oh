@@ -15,15 +15,29 @@
   
   <script>
   import AppCardList from './AppCardList.vue';
+  import { store } from '../store.js'
+  import axios from 'axios';
   export default {
     data(){
         return{
+            store,
+            listCard:[],
         }
     },
     name: "AppMain",
     components:{
         AppCardList,  
-    }    
+    },
+    created(){
+    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+    .then( (response) => {
+        console.log(response.data.data);
+        this.store.listCard = response.data.data
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+}   
   }
 
   </script>
