@@ -1,7 +1,7 @@
 <template>
     <div class="container my-4">
       <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-        <option selected v-for="item in filteredList">{{ item.archetype_name }}</option>
+        <option selected v-for="item in filteredList" @click="$emit('select')">{{ item.archetype_name }}</option>
       </select>
     </div>
   </template>
@@ -13,7 +13,6 @@
   export default {
     data() {
       return {
-        textSearch:"",
         filteredList:[]
       }
     },

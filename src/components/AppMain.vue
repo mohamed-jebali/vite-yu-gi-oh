@@ -1,6 +1,6 @@
 <template>
         <main class="container mt-4">
-            <AppSelect/>
+            <AppSelect @filteredCards="select"/>
             <div class="cards-founded container">
                 <h3>
                     Cards Founded 39
@@ -24,6 +24,7 @@
         return{
             store,
             listCard:[],
+            apiUrl:'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',
         }
     },
     name: "AppMain",
@@ -31,17 +32,25 @@
         AppCardList,
         AppSelect  
     },
+    methods: {
+        filteredCards(filter = ""){
+            axios.get(this.apiUrl, {
+                params: {
+                    archetypeCard: filter
+                }
+            })
+            .then( (response) => {
+            this.listCard = response.data.data;
+            })
+            .catch(function (error) {
+            console.log(error);
+            })
+        }    
+    },
     created(){
-    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
-    .then( (response) => {
-        console.log(response.data.data);
-        this.store.listCard = response.data.data
-    })
-    .catch(function (error) {
-        console.log(error);
-    })
+        this.filteredCards();
+    },
 }
-  }
 
   </script>
 
