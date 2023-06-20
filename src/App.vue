@@ -1,6 +1,5 @@
 <script>
 import AppHeader from './components/AppHeader.vue'
-import AppSelect from './components/AppSelect.vue'
 import AppMain from './components/AppMain.vue'
 import './styles/general.scss'
 
@@ -12,7 +11,6 @@ export default{
   name:"App",
   components:{
     AppHeader,
-    AppSelect,
     AppMain,
   },
 
@@ -21,7 +19,6 @@ export default{
 
 <template>
   <AppHeader/>
-  <AppSelect/>
   <AppMain/>
 </template>
 

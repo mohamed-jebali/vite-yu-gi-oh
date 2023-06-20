@@ -1,5 +1,6 @@
 <template>
         <main class="container mt-4">
+            <AppSelect/>
             <div class="cards-founded container">
                 <h3>
                     Cards Founded 39
