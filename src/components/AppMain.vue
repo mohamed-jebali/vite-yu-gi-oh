@@ -15,6 +15,7 @@
   
   <script>
   import AppCardList from './AppCardList.vue';
+  import AppSelect from './AppSelect.vue';
   import { store } from '../store.js'
   import axios from 'axios';
   export default {
@@ -22,21 +23,33 @@
         return{
             store,
             listCard:[],
+            apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0',
         }
     },
     name: "AppMain",
     components:{
-        AppCardList,  
+        AppCardList,
+        AppSelect  
+    },
+    methods: {
+        searchCard(needle = ''){
+            axios.get(this.apiUrl, {
+                    params: {
+                        name: needle
+                    }
+                })
+                .then( (response) => {
+
+                    this.listCard = response.data
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
     },
     created(){
-    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
-    .then( (response) => {
-        console.log(response.data.data);
-        this.store.listCard = response.data.data
-    })
-    .catch(function (error) {
-        console.log(error);
-    })
+        this.searchCard();
 }   
   }
 

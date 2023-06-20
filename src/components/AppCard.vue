@@ -4,6 +4,7 @@
     <div class="card-body">
     <h5 class="card-title">{{ title }}</h5>
     <p class="card-text">{{ type }}</p>
+    <p class="card-text">{{ archetype }}</p>
   </div>
 </div>
   </template>
@@ -18,6 +19,7 @@
         title : String,
         type : String,
         image : String,
+        archetype: String
     }
   }
   </script>

@@ -4,6 +4,7 @@
             :title="item.name"
             :type="item.type"
             :image="item.card_images[0].image_url"
+            :archetypes="item.archetypes"
             />
         </div>
 </template>
